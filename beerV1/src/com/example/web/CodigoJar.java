@@ -9,8 +9,7 @@ import java.nio.file.Paths;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
-import javax.servlet.annotation.WebServlet;
+
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -57,21 +56,5 @@ public class CodigoJar extends HttpServlet
 		
 		arquivo.close();
 		inputStream.close();
-	}
-	
-	public static String getFileName( Part part ) 
-	{
-		String header = part.getHeader("content-disposition");
-		String[] sections = header.split("\\s*;\\s*");
-		
-		for( String s : sections ) 
-		{
-			if( s.startsWith( "filename=" ) ) 
-			{
-				return s.substring( 9 ).replace( "\"", "" );
-			}
-		}
-		
-		return null;
 	}
 }
