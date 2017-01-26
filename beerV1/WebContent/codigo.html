@@ -1,8 +1,13 @@
 <html>
 	<body>
+		<h1 align="center">Enviando Arquivo</h1>
+		<form method="post" action="Codigo.do" enctype="multipart/form-data">
+        	<p><input type="file" name="arquivo" /></p>
+        	<input type="submit" value="Envia Arquivo" />
+    	</form>
 		<h1 align="center">Baixando Código</h1>
-		<form method="POST" action="Codigo.do">
-			<input type="SUBMIT" value="Download Jar">
+		<form method="get" action="Codigo.do">
+			<input type="submit" value="Download Jar">
 		</form>
 	</body>
 </html>
