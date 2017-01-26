@@ -16,6 +16,7 @@ public class CodigoJar extends HttpServlet
 	public void doPost( HttpServletRequest request, HttpServletResponse response ) throws IOException, ServletException
 	{	
 		response.setContentType( "application/jar" );
+		response.setHeader( "Content-Disposition", "attachment; filename=mysql-connector-java-5.1.37-bin.jar" );
 		ServletContext ctx = getServletContext();
 		InputStream is = ctx.getResourceAsStream( "/mysql-connector-java-5.1.37-bin.jar" );
 		
