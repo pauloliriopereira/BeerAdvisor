@@ -9,7 +9,7 @@ import java.nio.file.Paths;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
-
+import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,9 +17,10 @@ import javax.servlet.http.Part;
 
 public class CodigoJar extends HttpServlet 
 {
+	@Override
 	public void doGet( HttpServletRequest request, HttpServletResponse response ) throws IOException, ServletException
 	{	
-	    ServletContext context = getServletContext(); 
+	    ServletContext context = getServletContext();
 	    
 		response.setContentType( "application/jar" );
 		response.setHeader( "Content-Disposition", "attachment; filename=mysql-connector-java-5.1.37-bin.jar" );
@@ -39,6 +40,7 @@ public class CodigoJar extends HttpServlet
 		os.close();
 	}
 	
+	@Override
 	public void doPost( HttpServletRequest request, HttpServletResponse response ) throws IOException, ServletException
 	{	
 		Part part = request.getPart( "arquivo" );
